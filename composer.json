@@ -6,8 +6,23 @@
             "email": "drstopor@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.12"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
     "bin": [
         "bin/brain-games"
-    ]
+    ],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ],
+        "psr-4": {
+            "Brain\\Games\\": "src/"
+        }
+    },
+    "description": ""
 }
