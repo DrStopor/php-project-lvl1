@@ -5,6 +5,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Brain\Games\Cli\BrainGame;
 
-$game = new BrainGame();
+$gameEven = new BrainGame();
 
-$game->run();
+$gameEven->run();
+
+$gameEven->evenGame();

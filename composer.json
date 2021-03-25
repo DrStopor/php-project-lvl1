@@ -6,6 +6,10 @@
             "email": "drstopor@gmail.com"
         }
     ],
+    "description": "",
+    "license": [
+        "GPL-3.0-or-later"
+    ],
     "require": {
         "wp-cli/php-cli-tools": "^0.11.12"
     }
@@ -15,7 +19,8 @@
         "squizlabs/php_codesniffer": "^3.5"
     },
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "autoload": {
         "files": [
@@ -25,7 +30,6 @@
             "Brain\\Games\\": "src/"
         }
     },
-    "description": "",
     "scripts": {
         "phpcs": "phpcs --standard=PSR2"
     }
