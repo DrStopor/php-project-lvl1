@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Brain\Games;
-
 
 use function Brain\Games\Cli\askName;
 use function cli\line;
@@ -21,7 +19,7 @@ class Engine
         $this->name = askName();
     }
 
-    public function Game(): void{
-
+    public function game(): void
+    {
     }
 }

@@ -7,4 +7,4 @@ use Brain\Games\games\Calc;
 
 $game = new Calc();
 $game->run();
-$game->Game();
+$game->game();

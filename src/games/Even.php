@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Brain\Games\games;
-
 
 use Brain\Games\Engine;
 use function cli\line;
@@ -13,7 +11,7 @@ class Even extends Engine
     /**
      * Start game of even
      */
-    public function Game(): void
+    public function game(): void
     {
         $count = 0;
         line('Answer "yes" if the number is even, otherwise answer "no".');

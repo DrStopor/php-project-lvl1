@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Brain\Games\games;
-
 
 use Brain\Games\Engine;
 use function cli\line;
@@ -13,7 +11,7 @@ class Calc extends Engine
     /**
      * Start game of Calc
      */
-    public function Game(): void
+    public function game(): void
     {
         $count = 0;
         line('What is the result of the expression?');

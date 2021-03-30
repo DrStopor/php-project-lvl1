@@ -9,4 +9,4 @@ $gameEven = new Even();
 
 $gameEven->run();
 
-$gameEven->Game();
+$gameEven->game();
