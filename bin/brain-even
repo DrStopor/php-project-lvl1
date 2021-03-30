@@ -3,10 +3,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\Cli\BrainGame;
+use Brain\Games\games\Even;
 
-$gameEven = new BrainGame();
+$gameEven = new Even();
 
 $gameEven->run();
 
-$gameEven->evenGame();
+$gameEven->Game();
