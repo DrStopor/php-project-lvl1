@@ -62,7 +62,7 @@ class Calc extends Engine
 
     private function getRandomOperation(): string
     {
-        $range = random_int(0,2);
+        $range = random_int(0, 2);
         switch ($range) {
             case 0:
                 return '-';
