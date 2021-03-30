@@ -3,8 +3,6 @@
 namespace Brain\Games;
 
 use function Brain\Games\Cli\askName;
-use function cli\line;
-use function cli\prompt;
 
 class Engine
 {
