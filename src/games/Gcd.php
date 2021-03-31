@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Brain\Games\games;
-
 
 use Brain\Games\Engine;
 use function cli\line;
@@ -17,7 +15,7 @@ class Gcd extends Engine
         do {
             $numberValueOne = random_int(0, 99);
             $numberValueTwo = random_int(0, 99);
-            line('Question: %s %s', $numberValueOne,$numberValueTwo);
+            line('Question: %s %s', $numberValueOne, $numberValueTwo);
             $answer =  prompt('Your answer');
             $result = (int)gmp_gcd($numberValueOne, $numberValueTwo);
             if ((int)$answer === $result) {
