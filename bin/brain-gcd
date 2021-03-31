@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Brain\Games\games\Gcd;
+
+$gameEven = new Gcd();
+
+$gameEven->run();
+
+$gameEven->game();

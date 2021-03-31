@@ -16,10 +16,6 @@ class Calc extends Engine
     {
         $count = 0;
         line('What is the result of the expression?');
-        $reference = [
-            'yes' => true,
-            'no' => false
-        ];
         do {
             $numberValueOne = random_int(0, 99);
             $numberValueTwo = random_int(0, 99);
@@ -38,7 +34,7 @@ class Calc extends Engine
         if ($count === self::COUNT_ROUNDS) {
             line('Congratulations, %s!', $this->name);
         } else {
-            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $result, $result);
+            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $result);
             line('Let\'s try again, $s!', $this->name);
         }
     }

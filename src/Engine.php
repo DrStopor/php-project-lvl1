@@ -4,9 +4,9 @@ namespace Brain\Games;
 
 use function Brain\Games\Cli\askName;
 
-class Engine
+abstract class Engine
 {
-    protected $name;
+    protected string $name;
     protected const COUNT_ROUNDS = 3;
 
     /**
@@ -17,7 +17,5 @@ class Engine
         $this->name = askName();
     }
 
-    public function game(): void
-    {
-    }
+    abstract public function game(): void;
 }
