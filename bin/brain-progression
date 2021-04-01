@@ -3,8 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\games\Progression;
+use function Brain\Games\Progression\gameProgression;
 
-$game = new Progression();
-$game->run();
-$game->game();
+gameProgression();

@@ -1,39 +1,77 @@
 <?php
 
-namespace Brain\Games\games;
+namespace Brain\Games\Prime;
 
-use Brain\Games\Engine;
-
+use function Brain\Games\run;
 use function cli\line;
 use function cli\prompt;
 
-class Prime extends Engine
+use const Brain\Games\COUNT_ROUNDS;
+
+const MAX_NUMBER = 200;
+
+/**
+ * @throws \Exception
+ */
+function gamePrime(): void
 {
-    public function game(): void
-    {
-        $count = 0;
-        line('Answer "yes" if given number is prime. Otherwise answer "no".');
-        do {
-            $numberValueOne = random_int(0, 200);
-            line('Question: %s', $numberValueOne);
-            $answer =  prompt('Your answer');
-            $answerArray['yes'] = 2;
-            $answerArray['no'] = 0;
-            $result = (int)gmp_prob_prime($numberValueOne) === 2 ? 2 : 0;
-            if ($result === $answerArray[$answer]) {
-                $count++;
-                line('Correct!');
-            } else {
+    $name = run();
+    $count = 0;
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    $primeArray = eratosthenesArray(MAX_NUMBER);
+    do {
+        $numberValueOne = random_int(2, MAX_NUMBER);
+        line('Question: %s', $numberValueOne);
+        $answer = prompt('Your answer');
+        $answerArray = [];
+        $answerArray['yes'] = true;
+        $answerArray['no'] = false;
+        $result = in_array($numberValueOne, $primeArray, true);
+        if ($result === $answerArray[$answer]) {
+            $count++;
+            line('Correct!');
+        } else {
+            break;
+        }
+    } while ($count < COUNT_ROUNDS);
+
+    if ($count === COUNT_ROUNDS) {
+        line('Congratulations, %s!', $name);
+    } else {
+        $waitedAnswer = array_search($result, $answerArray, true);
+        line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $waitedAnswer);
+        line('Let\'s try again, %s!', $name);
+    }
+}
+
+/**
+ * @param int $maxDiapason
+ * @return array
+ */
+function eratosthenesArray(int $maxDiapason): array
+{
+    $result = [];
+    for ($i = 2; $i <= $maxDiapason; $i++) {
+        $result[] = $i;
+    }
+
+    $arrLength = count($result);
+
+    //do not replace to foreach
+    for ($i = 0, $j = 0; $i < $arrLength; $i++) {
+        if ($result[$i] !== null) {
+            $quad = $result[$i] ** 2;
+            if ($quad > $maxDiapason) {
                 break;
             }
-        } while ($count < self::COUNT_ROUNDS);
-
-        if ($count === self::COUNT_ROUNDS) {
-            line('Congratulations, %s!', $this->name);
+            $j = array_search($quad, $result, true);
         } else {
-            $waitedAnswer = array_search($result, $answerArray, true);
-            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $waitedAnswer);
-            line('Let\'s try again, %s!', $this->name);
+            continue;
+        }
+        while ($j < $arrLength) {
+            $result[$j] = null;
+            $j += $result[$i];
         }
     }
+    return array_diff($result, [0, null]);
 }

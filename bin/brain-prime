@@ -3,10 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\games\Prime;
+use function Brain\Games\Prime\gamePrime;
 
-$gameEven = new Prime();
-
-$gameEven->run();
-
-$gameEven->game();
+gamePrime();

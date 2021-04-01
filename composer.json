@@ -28,7 +28,13 @@
     ],
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Engine.php",
+            "src/games/Gcd.php",
+            "src/games/Calc.php",
+            "src/games/Even.php",
+            "src/games/Prime.php",
+            "src/games/Progression.php"
         ],
         "psr-4": {
             "Brain\\Games\\": "src/"

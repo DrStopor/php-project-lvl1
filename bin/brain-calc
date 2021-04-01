@@ -3,8 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\games\Calc;
+use function Brain\Games\Calc\gameCalc;
 
-$game = new Calc();
-$game->run();
-$game->game();
+gameCalc();

@@ -3,10 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\games\Gcd;
+use function Brain\Games\Gcd\gameGcd;
 
-$gameEven = new Gcd();
-
-$gameEven->run();
-
-$gameEven->game();
+gameGcd();
