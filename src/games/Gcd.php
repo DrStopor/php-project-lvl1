@@ -31,7 +31,7 @@ class Gcd extends Engine
             line('Congratulations, %s!', $this->name);
         } else {
             line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $result);
-            line('Let\'s try again, $s!', $this->name);
+            line('Let\'s try again, %s!', $this->name);
         }
     }
 }

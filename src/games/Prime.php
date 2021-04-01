@@ -33,7 +33,7 @@ class Prime extends Engine
         } else {
             $waitedAnswer = array_search($result, $answerArray, true);
             line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $waitedAnswer);
-            line('Let\'s try again, $s!', $this->name);
+            line('Let\'s try again, %s!', $this->name);
         }
     }
 }
