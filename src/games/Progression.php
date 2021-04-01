@@ -47,7 +47,7 @@ class Progression extends Engine
         }
     }
 
-    private function initProgressionArray(int $one, int $two, $lengthArray): Array
+    private function initProgressionArray(int $one, int $two, $lengthArray): array
     {
         $difference = $two - $one;
         $result[] = $one;
@@ -58,7 +58,7 @@ class Progression extends Engine
         return $result;
     }
 
-    private function getQuestionArray($valueArray, $lengthArray): Array
+    private function getQuestionArray($valueArray, $lengthArray): array
     {
         $skipNumber = random_int(0, $lengthArray - 1);
         $skipValue = $valueArray[$skipNumber];
