@@ -3,8 +3,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Brain\Games\Cli\BrainGame;
+use function Brain\Games\Cli\askName;
 
-$game = new BrainGame();
-
-$game->run();
+askName();
