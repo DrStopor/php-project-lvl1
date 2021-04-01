@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Brain\Games\games;
 
 use Brain\Games\Engine;
@@ -20,7 +19,7 @@ class Prime extends Engine
             $answer =  prompt('Your answer');
             $answerArray['yes'] = 2;
             $answerArray['no'] = 0;
-            $result = (int)gmp_prob_prime($numberValueOne) === 2 ? 2: 0;
+            $result = (int)gmp_prob_prime($numberValueOne) === 2 ? 2 : 0;
             if ($result === $answerArray[$answer]) {
                 $count++;
                 line('Correct!');
@@ -32,7 +31,8 @@ class Prime extends Engine
         if ($count === self::COUNT_ROUNDS) {
             line('Congratulations, %s!', $this->name);
         } else {
-            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, array_search($result, $answerArray, true));
+            $waitedAnswer = array_search($result, $answerArray, true);
+            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $answer, $waitedAnswer);
             line('Let\'s try again, $s!', $this->name);
         }
     }
